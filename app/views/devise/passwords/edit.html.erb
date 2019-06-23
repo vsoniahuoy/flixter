@@ -17,8 +17,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <a href="http://localhost:3030/users/password/edit?reset_password_token=tDJ3-sviyw3bzPtNGeaF">
+    <%= f.button :submit,  "Change my password", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
