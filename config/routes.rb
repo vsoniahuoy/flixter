@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#index'
   resources :courses, only: [:index, :show]
+  resources :lessons, only: [:show]
   namespace :instructor do
     # we don't want the user to mess around or request unreason path, 
     # to prevent that, we do not want to show the full URL path
