@@ -12,6 +12,12 @@ class Instructor::SectionsController < ApplicationController
 
   private
 
+  helper_method :current_course
+  def current_course
+    @current_course ||= Course.fine(params[:course:id])
+  end
+  
+
   def section_params
     params.require(:section).permit(:title)
   end
