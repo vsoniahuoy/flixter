@@ -2,10 +2,12 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @lesson = current_section.lessons.create(lesson_params)
-    @lesson.photos.create(photo_params.merge(user: current_user))
-    redirect_to lesson_path(@lesson)
+    @course = current_section.lessons.create(lesson_params)
+    @course.photos.create(photo_params.merge(user: current_user))
+    redirect_to instructor_course_path(current_course)
   end
+
+
 
   private
 
