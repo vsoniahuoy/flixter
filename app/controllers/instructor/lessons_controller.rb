@@ -13,21 +13,13 @@ class Instructor::LessonsController < ApplicationController
     redirect_to instructor_course_path(current_course)
   end
  
-  # def new
-  #   @section = Section.find(params[:section_id])
-  #   @lesson = Lesson.new
-  # end
-
-  # def create
-  #   @section = Section.find(params[:section_id])
-  #   @lesson = @section.lessons.create(lesson_params)
-  #   redirect_to instructor_course_path(@section.course)
-
-  # end
 
   private
-
-
+  def require_authorized_for_current_section
+    if current_course.user != current_user
+      render plain: "Unauthorized", status: :unauthorized
+    end
+  end
 
   helper_method :current_course
   def current_course

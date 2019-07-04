@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 # By specifying only: [], tells only hook up URLs for [] empty array.
     resources :sections, only: [] do 
       resources :lessons, only: [:new, :create]
-      resources :photos, only: [:new, :create]
+      # resources :photos, only: [:new, :create]
     end
     resources :courses, only: [:new, :create, :show] do
       resources :sections, only: [:new, :create]
