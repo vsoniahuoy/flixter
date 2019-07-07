@@ -21,7 +21,10 @@
               -
               <%= lesson.subtitle %>
             </li>
-            <% end %>
+          <% end %>
+          <div class="col-10-offset-1">
+          <%= image_tag @course.image.to_s, class: "mx-auto d-block img-fluid" %>
+          </div>
         </ul>
         <br clas="clr" />
       </li>
