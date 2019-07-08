@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
 
   def show
-    @photo = Photo.new
+    # @photo = Photo.new
   end
 
 
