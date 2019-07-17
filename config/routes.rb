@@ -11,6 +11,7 @@ end
     resources :sections, only: [] do
       resources :lessons, only: [:new, :create]
     end
+    resources :sections, only: [:update]
     resources :courses, only: [:new, :create, :show] do
       resources :sections, only: [:new, :create]
     end
